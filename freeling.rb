@@ -6,6 +6,7 @@ class Freeling < Formula
   head 'http://devel.cpl.upc.edu/freeling/svn/trunk', :using => :svn
   homepage 'http://nlp.lsi.upc.edu/freeling/'
   url 'http://devel.cpl.upc.edu/freeling/downloads/21'
+  sha1 'd05242e398f60d9720f9bbde2743ea469b1531d1'
   
 
   # depends_on 'icu4c'
@@ -38,7 +39,6 @@ class Freeling < Formula
     # ENV.append 'CPPFLAGS', "-I#{icu4c_prefix}/include"
 
     system "env LDFLAGS='-L/usr/local/Cellar/libtool/2.4.2/lib -L/usr/local/Cellar/icu4c/50.1/lib -L/opt/local/lib' CPPFLAGS='-I/usr/local/Cellar/libtool/2.4.2/include -I/opt/local/include -I/usr/local/Cellar/boost/1.53.0/include -I/usr/local/Cellar/icu4c/50.1/include' ./configure --prefix=#{prefix}"
-    system "make"
     system "make install"
 
     chdir "APIs/java"
