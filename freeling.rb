@@ -6,6 +6,7 @@ class Freeling < Formula
   head 'http://devel.cpl.upc.edu/freeling/svn/trunk', :using => :svn
   homepage 'http://nlp.lsi.upc.edu/freeling/'
   url 'http://devel.cpl.upc.edu/freeling/downloads/21'
+  
 
   # depends_on 'icu4c'
   # requires boost --with-icu.
@@ -35,12 +36,6 @@ class Freeling < Formula
 
     ENV.append 'CPPFLAGS', "-I#{libtool_prefix}/include"
     # ENV.append 'CPPFLAGS', "-I#{icu4c_prefix}/include"
-
-    system "aclocal"
-    system "glibtoolize --force"
-    system "autoconf"
-    system "automake -a"
-    system "autoreconf --force --install"
 
     system "env LDFLAGS='-L/usr/local/Cellar/libtool/2.4.2/lib -L/usr/local/Cellar/icu4c/50.1/lib -L/opt/local/lib' CPPFLAGS='-I/usr/local/Cellar/libtool/2.4.2/include -I/opt/local/include -I/usr/local/Cellar/boost/1.53.0/include -I/usr/local/Cellar/icu4c/50.1/include' ./configure --prefix=#{prefix}"
     system "make"
