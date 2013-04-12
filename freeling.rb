@@ -5,7 +5,7 @@ require 'formula'
 class Freeling < Formula
   head 'http://devel.cpl.upc.edu/freeling/svn/trunk', :using => :svn
   homepage 'http://nlp.lsi.upc.edu/freeling/'
-  url 'freeling-3.0.tar.gz'
+  url 'http://devel.cpl.upc.edu/freeling/downloads/21'
 
   # depends_on 'icu4c'
   # requires boost --with-icu.
